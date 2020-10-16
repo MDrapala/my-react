@@ -1,29 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  Container,
+  Row,
+  Col,
+} from 'react-bootstrap';
 
-import Home from './components/home';
+import NavBar from './components/navbar';
+import ListCard from './components/listcard';
+import Video from './components/video';
+import Aside from './components/aside';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
-
-const datas = [{
-  id: '12345',
-  name: 'Cyril',
-  phone: '0606060606',
-}, {
-  id: '1234',
-  name: 'Matt',
-  phone: '0707070707',
-}, {
-  id: '123',
-  name: 'David',
-  phone: '0808080808',
-}];
 
 const App = () => (
   <div>
-    <ul>
-      {datas.map((data) => <Home data={data} />)}
-    </ul>
+    <NavBar />
+    <Container>
+      <Row style={{ marginTop: '50px' }}>
+        <Col sm={8}>
+          <Video />
+          <hr />
+          <ListCard />
+        </Col>
+        <Col sm={4}>
+          <Aside />
+        </Col>
+      </Row>
+    </Container>
   </div>
 );
 
